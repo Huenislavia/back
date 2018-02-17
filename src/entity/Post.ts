@@ -4,8 +4,8 @@ import { User } from "./User";
 @Entity()
 export class Post {
 
-    @PrimaryGeneratedColumn()
-    id: number;
+    @PrimaryGeneratedColumn('uuid')
+    uuid: string;
 
     @Column()
     image: string;

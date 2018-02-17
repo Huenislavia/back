@@ -4,8 +4,8 @@ import { Post } from "./Post";
 @Entity()
 export class User {
 
-    @PrimaryGeneratedColumn()
-    id: number;
+    @PrimaryGeneratedColumn("uuid")
+    uuid: string;
 
     @Column()
     name: string;
@@ -21,10 +21,10 @@ export class User {
     @Column()
     password: string;
 
-    @Column()
+    @Column({ nullable: true })
     avatar: string;
 
-    @Column()
+    @Column({ nullable: true })
     bio: string;
 
     @OneToMany(type => Post, photo => photo.user)
